@@ -1,84 +1,146 @@
-# React + Vite + TypeScript Template (react-vite-ts)
+# Web3 Frontend Template for EVM Chains with Arweave Deployment
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Dan5py/react-vite-ts/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A minimalistic template for kickstarting React projects with Vite and TypeScript.
+A robust template for building decentralized frontends that interact with Base, Ethereum, and other EVM chains, with permanent deployment capabilities on Arweave via ArLink.
 
 ## 🎉 Features
 
+### Core Technologies
 - **React** - A JavaScript library for building user interfaces.
-- **Vite** - A fast, opinionated frontend build tool.
-- **TypeScript** - A typed superset of JavaScript that compiles to plain JavaScript.
-- **Tailwind CSS** - A utility-first CSS framework.
-- **Tailwind Prettier Plugin** - A Prettier plugin for formatting Tailwind CSS classes.
-- **ESLint** - A pluggable linting utility for JavaScript and TypeScript.
-- **PostCSS** - A tool for transforming CSS with JavaScript.
-- **Autoprefixer** - A PostCSS plugin to parse CSS and add vendor prefixes.
+- **Vite** - Fast, modern frontend build tool.
+- **TypeScript** - Type-safe development.
+- **Tailwind CSS** - Utility-first styling.
+- **shadcn presetup** - Template is compatible with shadcn out of the box.
+
+### Web3 Integration
+- **wagmi** - React Hooks for Ethereum.
+- **RainbowKit** - Wallet connection management.
+- **ethers.js** - Ethereum interactions.
+- **Base Chain Support** - Optimized for Base with easy configuration for other EVM chains.
+
+### Decentralized Deployment
+- **ArLink Support** - Simplified deployment to Arweave.
 
 ## ⚙️ Prerequisites
 
-Make sure you have the following installed on your development machine:
+- Node.js (version 16 or above).
+- Yarn (package manager).
+- An Arweave wallet/keyfile for deployment.
+- Test ETH on your preferred network (Base Goerli for testing).
 
-- Node.js (version 16 or above)
-- Yarn (package manager)
+## 🔗 Chain Configuration
+
+### Supported Networks
+- Base (Mainnet & Testnet).
+- Ethereum (Mainnet & Goerli).
+- Other EVM-compatible chains.
+
+To add or modify chains:
+
+```typescript
+// Update chain configuration in wagmi config
+const chains = [base, baseGoerli, mainnet, goerli];
+```
 
 ## 🚀 Getting Started
 
-Follow these steps to get started with the react-vite-ts template:
-
 1. Clone the repository:
-
    ```bash
-   git clone https://github.com/Dan5py/react-vite-ts.git
+   git clone [your-repo-url]
    ```
 
-2. Navigate to the project directory:
-
+2. Install dependencies:
    ```bash
-   cd react-vite-ts
+   yarn
    ```
 
-3. Install the dependencies:
-
+3. Configure your environment:
    ```bash
-    yarn
+   cp .env.example .env
    ```
+   Add your:
+   - RPC URLs
+   - Chain IDs
+   - Arweave keyfile location
+   - Other API keys
 
-4. Start the development server:
-
+4. Start development:
    ```bash
    yarn dev
    ```
 
 ## 📜 Available Scripts
 
-- yarn dev - Starts the development server.
-- yarn build - Builds the production-ready code.
-- yarn lint - Runs ESLint to analyze and lint the code.
-- yarn preview - Starts the Vite development server in preview mode.
+- `yarn dev` - Start the development server.
+- `yarn build` - Build production-ready code.
+- `yarn deploy:arweave` - Deploy to Arweave via ArLink.
+
+## 🌐 Deployment
+
+### Arweave Deployment (via ArLink)
+
+Benefits:
+- Permanent, immutable storage.
+- One-click hosting.
+- True decentralization.
+- Content-addressed storage.
+- CI/CD integration.
+- ARNS integration for deploying your apps with human-readable names.
+
+Steps:
+1. Clone this template from the ArLink template marketplace.
+2. Clone locally.
+3. Commit your changes.
+4. Push to the main branch to update your changes on the permaweb.
+
+5. Build your project:
+   ```bash
+   yarn build
+   ```
+
+6. Deploy:
+   ```bash
+   yarn deploy:arweave
+   ```
 
 ## 📂 Project Structure
 
-The project structure follows a standard React application layout:
-
-```python
-react-vite-ts/
-  ├── node_modules/      # Project dependencies
-  ├── public/            # Public assets
-  ├── src/               # Application source code
-  │   ├── components/    # React components
-  │   ├── styles/        # CSS stylesheets
-  │   ├── lib/           # Utility functions
-  │   ├── App.tsx        # Application entry point
-  │   └── index.tsx      # Main rendering file
-  ├── .eslintrc.json     # ESLint configuration
-  ├── index.html         # HTML entry point
-  ├── postcss.config.js  # PostCSS configuration
-  ├── tailwind.config.js # Tailwind CSS configuration
-  ├── tsconfig.json      # TypeScript configuration
-  └── vite.config.ts     # Vite configuration
 ```
+project-root/
+  ├── src/
+  │   ├── components/     # React components
+  │   ├── contracts/      # Contract ABIs and addresses
+  │   ├── hooks/          # Custom Web3 hooks
+  │   ├── lib/            # Utilities and configurations
+  │   │   ├── chains.ts   # Chain configurations
+  │   │   └── wagmi.ts    # wagmi client setup
+  │   └── pages/          # Application pages
+  ├── arlink.config.js    # ArLink deployment configuration
+  └── vite.config.ts      # Vite configuration
+```
+
+## ⚡ Development Constraints for Arweave Compatibility
+
+To ensure your site runs smoothly on Arweave, consider the following constraints:
+
+- **Client-Side Rendering**: Ensure that your application is fully client-side rendered. Arweave does not support server-side rendering, so all necessary data must be fetched and rendered on the client side.
+- **Static Assets**: Use static assets that can be served directly from Arweave. Avoid dynamic content that requires server-side processing.
+- **Bundle Size**: Optimize your bundle size to reduce deployment costs and improve loading times. Use code splitting and lazy loading where possible.
+- **Error Handling**: Implement robust error handling to manage potential issues with network requests or wallet connections.
+- **Testing**: Thoroughly test your application on the Base Goerli test network before deploying to ensure compatibility and performance.
+
+## 🔒 Security Best Practices
+
+- Environment variable management.
+- Private key security.
+- RPC endpoint security.
+- Contract interaction safety.
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](https://choosealicense.com/licenses/mit/) file for details.
+MIT License - see [LICENSE](LICENSE) for details.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details.
