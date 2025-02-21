@@ -1,4 +1,4 @@
-# Based Starter Template for Building UNSTOPPABLE Dapps
+# Based Starter Template for Building UNSTOPPABLE  EVM Dapps
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
