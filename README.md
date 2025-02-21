@@ -1,4 +1,4 @@
-# Web3 Frontend Template for EVM Chains with Arweave Deployment
+# Based Starter Template for Building UNSTOPPABLE Dapps
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
