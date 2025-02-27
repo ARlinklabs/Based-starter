@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A robust template for building decentralized frontends that interact with Base, Ethereum, and other EVM chains, with permanent deployment capabilities on Arweave via ArLink.
+A robust template for building decentralized frontends that interact with Base, Ethereum, and other EVM chains, with permanent deployment capabilities on Arweave via Arlink.
 
 ## 🎉 Features
 
