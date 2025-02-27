@@ -8,10 +8,10 @@ A robust template for building decentralized frontends that interact with Base, 
 
 ### Core Technologies
 - **React** - A JavaScript library for building user interfaces.
-- **Vite** - Fast, modern frontend build tool.
-- **TypeScript** - Type-safe development.
-- **Tailwind CSS** - Utility-first styling.
-- **shadcn presetup** - Template is compatible with shadcn out of the box.
+- **Vite** - A fast, modern frontend build tool.
+- **TypeScript** - A type-safe development language.
+- **Tailwind CSS** - A utility-first CSS framework.
+- **shadcn presetup** - The template is compatible with shadcn and V0 out of the box.
 
 ### Web3 Integration
 - **wagmi** - React Hooks for Ethereum.
@@ -116,7 +116,6 @@ project-root/
   │   │   ├── chains.ts   # Chain configurations
   │   │   └── wagmi.ts    # wagmi client setup
   │   └── pages/          # Application pages
-  ├── arlink.config.js    # ArLink deployment configuration
   └── vite.config.ts      # Vite configuration
 ```
 
